@@ -1,0 +1,48 @@
+                                                                     BÁO CÁO GIT
+
+
+1. Định nghĩa
+
+       Git là tên gị của một hệ thống quản lý phiên bản phân tán (Distributed Version Control System-DVCS) là một trong những hệ thống quản
+lý phiên bản phân tán phổ biến nhất hiện nay. DVCS nghĩa là hệ thống giúp mỗi máy tính có thể lưu trữ nhiều phiên bản khác nhau của một mã nguồn được nhân bản (clone) từ một kho chứa mã nguồn (repository), mỗi thay đổi vào mã nguồn trên máy tính sẽ có thể ủy thác (commit) rồi đưa lên máy chủ nơi đặt kho chứa chính. Và một máy tính khác (nếu họ có quyền truy cập) cũng có thể clone lại một tập hợp các thay đổi mới nhất trên máy tính kia.
+
+2. Cài đặt Git vào Linux
+
+Dùng lệnh:  sudo apt-get install git
+
+Sau khi cài đặt xong, kiểm tra thông tin chứng thực trên user bằng cách xem tập tin: ~/.gitconfig
+
+3. Repository và cách tạo
+
+Repository (kho chứa) nghĩa là nơi mà bạn sẽ lưu trữ mã nguồn và một người khác có thể sao chép lại mã nguồn đó nhằm làm việc. Repository có hai loại là Local Repository và Remote Repository.
+
+Cách tạo Repository:
+- Tạo Local Repository
++ Truy cập vào thư mục của mã nguồn với lệnh cd
++ Dùng lệnh: git init để khởi tạo repository trong thư mục đó, để tạo thư mục chứa code, dùng lệnh: git init tên_folder.
+vd: git init exercise
+
+Nếu kho chứa đã có sẵn mã nguồn và cần đưa các tập tin về trạng thái Tracked (file mới) thì dùng lệnh: git add tên_file, có thể dùng dấu * để gom toàn bộ.
+
+Dùng lệnh git status để xem danh sách các tập tin đã được tracked (kiểm tra tình trạng của file).
+
+Để tiến hành ủy thác nhằm lưu lại bản chụp các thay đổi thì dùng lệnh commit: git commit -m "Lời nhắn", lúc này tất cả các tập đang ở trong trạng thái tracked hặc một tập tin đá được tracked nhưng có một sự thay đổi mới thì sẽ được commit.
+
+Khi muốn đẩy source lên github thì dùng lệnh: git push origin master.
+
+Để pull về những thay đổi mới nhất trên git hub dùng lệnh: git pull origin master.
+
+4. Tạo repository trên Github và nơi làm việc.
+
+Sau khi đã đăng nhập vào Github, sau đó nhấn vào dấu + trên menu và chọn New repository.
+Đặt tên cho kho chứa, có thể chọn loại kho chứa là Public (ai cũng có thể clone) và Private (chỉ có những người được cấp quyền mới có thể clone).
+Khi tạo xong nó sẽ dẫn bạn tới trang hướng dẫn làm việc với kho chứa vừa tạo. Và kho chứa của bạn bây giờ sẽ có địa chỉ là https://github.com/$user-name/$repository, ví dụ https://github.com/hagiang/hoc-git.
+
+Bây giờ clone kho chứa này về máy mình. Được thực hiện bằng 2 cách:
+
+Cách 1: git clone-b tên_forder address_http_repository.
+Cách 2:  + git clone tên_địa_chỉ: tạo mới
++ git checkout -b tên_forder: tạo nhánh mới
++ git branch: kiểm tra xem có bao nhiêu nhánh
++ git checkout tên_forder: chuyển sang chế độ làm việc của nhánh khác.
+
